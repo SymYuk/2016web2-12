@@ -9,7 +9,7 @@ router.get('/:encrypt', function(req, res, next) {
   if(encrypt !== undefined)
   {
     // 暗号化
-    var cipher = crypto.createCipher('aes192', password);
+    var cipher = crypto.createCipher('aes192', global password);
     cipher.update(encrypt, 'utf8', 'hex');
     var cipheredText = cipher.final('hex');
     res.send(cipheredText);
